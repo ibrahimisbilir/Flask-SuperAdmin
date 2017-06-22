@@ -1,3 +1,5 @@
+#-*- coding:utf-8 -*-
+
 import os
 import os.path as op
 import platform
@@ -31,7 +33,7 @@ class NameForm(form.BaseForm):
 
     def validate_name(self, field):
         if not self.regexp.match(field.data):
-            raise ValidationError(gettext('Invalid directory name'))
+            raise ValidationError(gettext('Geçersiz dizin ismi.'))
 
 
 class UploadForm(form.BaseForm):
@@ -39,7 +41,7 @@ class UploadForm(form.BaseForm):
         File upload form. Works with FileAdmin instance to check if it
         is allowed to upload file with given extension.
     """
-    upload = FileField(lazy_gettext('File to upload'))
+    upload = FileField(lazy_gettext('Yüklenecek dosya'))
 
     def __init__(self, admin):
         self.admin = admin
@@ -48,12 +50,12 @@ class UploadForm(form.BaseForm):
 
     def validate_upload(self, field):
         if not self.upload.has_file():
-            raise ValidationError(gettext('File required.'))
+            raise ValidationError(gettext('Dosya gerekli.'))
 
         filename = self.upload.data.filename
 
         if not self.admin.is_file_allowed(filename):
-            raise ValidationError(gettext('Invalid file type.'))
+            raise ValidationError(gettext('Geçersiz dosya tipi.'))
 
 
 class FileAdmin(BaseView):
@@ -348,7 +350,7 @@ class FileAdmin(BaseView):
         base_path, directory, path = self._normalize_path(path)
 
         if not self.can_upload:
-            flash(gettext('File uploading is disabled.'), 'error')
+            flash(gettext('Dosya yükleme iptal edildi.'), 'error')
             return redirect(self._get_dir_url('.index', path))
 
         form = UploadForm(self)
@@ -357,14 +359,14 @@ class FileAdmin(BaseView):
                                secure_filename(form.upload.data.filename))
 
             if op.exists(filename):
-                flash(gettext('File "%(name)s" already exists.',
+                flash(gettext('Dosya "%(name)s" zaten yüklü.',
                               name=form.upload.data.filename), 'error')
             else:
                 try:
                     self.save_file(filename, form.upload.data)
                     return redirect(self._get_dir_url('.index', path))
                 except Exception, ex:
-                    flash(gettext('Failed to save file: %(error)s', error=ex))
+                    flash(gettext('Kaydetme hatası: %(error)s', error=ex))
 
         return self.render(self.upload_template,
                            form=form,
@@ -388,7 +390,7 @@ class FileAdmin(BaseView):
         dir_url = self._get_dir_url('.index', path)
 
         if not self.can_mkdir:
-            flash(gettext('Directory creation is disabled.'), 'error')
+            flash(gettext('Dizin oluşturma iptal edildi.'), 'error')
             return redirect(dir_url)
 
         form = NameForm(request.form)
@@ -398,7 +400,7 @@ class FileAdmin(BaseView):
                 os.mkdir(op.join(directory, form.name.data))
                 return redirect(dir_url)
             except Exception, ex:
-                flash(gettext('Failed to create directory: %(error)s', ex),
+                flash(gettext('Dizin oluşturma hatası: %(error)s', ex),
                       'error')
 
         return self.render(self.mkdir_template,
@@ -406,7 +408,7 @@ class FileAdmin(BaseView):
                            dir_url=dir_url,
                            base_path=base_path,
                            path=path,
-                           msg=gettext(u'Create a new directory'))
+                           msg=gettext(u'Yeni dizin oluştur'))
 
     @expose('/delete/', methods=('POST',))
     def delete(self):
@@ -424,31 +426,31 @@ class FileAdmin(BaseView):
         return_url = self._get_dir_url('.index', op.dirname(path))
 
         if not self.can_delete:
-            flash(gettext('Deletion is disabled.'))
+            flash(gettext('Silme iptal edildi.'))
             return redirect(return_url)
 
         if op.isdir(full_path):
             if not self.can_delete_dirs:
-                flash(gettext('Directory deletion is disabled.'))
+                flash(gettext('Dizin silme iptal edildi.'))
                 return redirect(return_url)
 
             try:
                 shutil.rmtree(full_path)
                 flash(
-                    gettext('Directory "%s" was successfully deleted.' % path)
+                    gettext('"%s" dizini başarıyla silindi.' % path)
                 )
             except Exception, ex:
                 flash(
-                    gettext('Failed to delete directory: %(error)s', error=ex),
+                    gettext('Dizin silme hatası: %(error)s', error=ex),
                     'error'
                 )
         else:
             try:
                 os.remove(full_path)
-                flash(gettext('File "%(name)s" was successfully deleted.',
+                flash(gettext('"%(name)s" dosyası başarıyla silindi.',
                               name=path))
             except Exception, ex:
-                flash(gettext('Failed to delete file: %(name)s',
+                flash(gettext('Dosya silme hatası: %(name)s',
                               name=ex), 'error')
 
         return redirect(return_url)
@@ -468,11 +470,11 @@ class FileAdmin(BaseView):
         return_url = self._get_dir_url('.index', op.dirname(path))
 
         if not self.can_rename:
-            flash(gettext('Renaming is disabled.'))
+            flash(gettext('Yeniden isimlendirme iptal edildi.'))
             return redirect(return_url)
 
         if not op.exists(full_path):
-            flash(gettext('Path does not exist.'))
+            flash(gettext('Dosya dolu mevcut değil.'))
             return redirect(return_url)
 
         form = NameForm(request.form, name=op.basename(path))
@@ -482,11 +484,11 @@ class FileAdmin(BaseView):
                 filename = secure_filename(form.name.data)
 
                 os.rename(full_path, op.join(dir_base, filename))
-                flash(gettext('Successfully renamed "%(src)s" to "%(dst)s"',
+                flash(gettext('"%(src)s" başarıyla "%(dst)s" olarak değiştirildi',
                       src=op.basename(path),
                       dst=filename))
             except Exception, ex:
-                flash(gettext('Failed to rename: %(error)s',
+                flash(gettext('Yeniden isimlendirme hatası: %(error)s',
                               error=ex), 'error')
 
             return redirect(return_url)
