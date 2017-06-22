@@ -9,14 +9,14 @@
 {% endblock %}
 
 {% block body %}
-    <h1 id="main-title">{{ _gettext('Add %(model)s',model=name|capitalize) }}</h1>
+    <h1 id="main-title">{{ _gettext('Ekle %(model)s',model=name|capitalize) }}</h1>
     <div class="clearfix"></div>
     <hr />
 
     <div class="page-content">
         {% macro extra() %}
-            <input name="_add_another" type="submit" class="btn" value="{{ _gettext('Save and create other') }}" />
-            <input name="_edit" type="submit" class="btn" value="{{ _gettext('Save and stay on page') }}" />
+            <input name="_add_another" type="submit" class="btn" value="{{ _gettext('Kaydet ve diğerini oluştur.') }}" />
+            <input name="_edit" type="submit" class="btn" value="{{ _gettext('Kaydet ve sayfada kal.') }}" />
         {% endmacro %}
 
         {{ lib.render_form(form, extra(), admin_view.can_edit, admin_view.can_delete) }}
