@@ -16,10 +16,10 @@
         <h1 id="main-title">{{ _gettext('%(model)s model', model=name|capitalize) }}</h1>
 
         {% if admin_view.can_create %}
-            <a class="btn btn-primary btn-title" href="{{ url_for('.add') }}">{{ _gettext('Add %(model)s', model=name) }}</a>
+            <a class="btn btn-primary btn-title" href="{{ url_for('.add') }}">{{ _gettext('Ekle %(model)s', model=name) }}</a>
         {% endif %}
 
-        <select class="actions btn-title hidden" name="action" data-placeholder="{{ _gettext('Choose action') }}">
+        <select class="actions btn-title hidden" name="action" data-placeholder="{{ _gettext('Olay seçin') }}">
             <option value=""></option>
             {% if admin_view.can_delete %}
                 <option value="delete">{{ _gettext('Delete selected') }}</option>
@@ -29,13 +29,13 @@
         <div class="clearfix"></div>
         <hr />
 
-        <div class="total-count">Total count: {{ count }}</div>
+        <div class="total-count">Toplam sayı: {{ count }}</div>
 
         <div class="page-content">
             {% if admin_view.search_fields %}
                 <div class="search">
                     <div class="clear-btn{% if not search_query %}hide{% endif %}"></div>
-                    <input type="text" tabindex="0" autofocus="autofocus" name="q" class="search-input" placeholder="Search" {% if search_query %}value="{{ search_query }}"{% endif %}/>
+                    <input type="text" tabindex="0" autofocus="autofocus" name="q" class="search-input" placeholder="Ara" {% if search_query %}value="{{ search_query }}"{% endif %}/>
                 </div>
             {% endif %}
 
