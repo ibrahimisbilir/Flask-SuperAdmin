@@ -2,7 +2,7 @@
 {% set name = admin_view.get_display_name() %}
 
 {% block body %}
-    <h1 id="main-title">{{ _gettext('Delete') }}</h1>
+    <h1 id="main-title">{{ _gettext('Sil') }}</h1>
     <div class="clearfix"></div>
     <hr />
 
@@ -23,8 +23,8 @@
                 {% endfor %}
             </ul>
             <div class="form-buttons">
-                <input name="confirm_delete" type="submit" class="btn btn-danger btn-large" value="{{ _gettext('Confirm') }}" />
-                <a href="{{ cancel_url }}" class="btn">{{ _gettext('Cancel') }}</a>
+                <input name="confirm_delete" type="submit" class="btn btn-danger btn-large" value="{{ _gettext('Onay') }}" />
+                <a href="{{ cancel_url }}" class="btn">{{ _gettext('İptal') }}</a>
             </div>
         </form>
     </div>
