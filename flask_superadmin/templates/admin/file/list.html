@@ -10,10 +10,10 @@
 {% block body %}
     <h1 id="main-title">{{_gettext('Files')}}</h1>
     {% if admin_view.can_upload %}
-    <a class="btn btn-primary btn-title" href="{{ get_dir_url('.upload', path=dir_path) }}">{{ _gettext('Upload File') }}</a>
+    <a class="btn btn-primary btn-title" href="{{ get_dir_url('.upload', path=dir_path) }}">{{ _gettext('Dosya Yükle') }}</a>
     {% endif %}
     {% if admin_view.can_mkdir %}
-    <a class="btn btn-primary btn-title" href="{{ get_dir_url('.mkdir', path=dir_path) }}">{{ _gettext('Create Directory') }}</a>
+    <a class="btn btn-primary btn-title" href="{{ get_dir_url('.mkdir', path=dir_path) }}">{{ _gettext('Dizin Oluştur') }}</a>
     {% endif %}
     <div class="clearfix"></div>
     <hr />
@@ -37,8 +37,8 @@
         <thead>
             <tr>
                 <th class="span1">&nbsp;</th>
-                <th>Name</th>
-                <th>Size</th>
+                <th>İsim</th>
+                <th>Boyut</th>
             </tr>
         </thead>
         {% for name, path, is_dir, size in items %}
