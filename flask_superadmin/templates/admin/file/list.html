@@ -54,7 +54,7 @@
                         {% if name != '..' and admin_view.can_delete_dirs %}
                         <form class="icon" method="POST" action="{{ url_for('.delete') }}">
                             <input type="hidden" name="path" value="{{ path }}"></input>
-                            <button onclick="return confirm('{{ _gettext('Are you sure you want to delete \\\'%(name)s\\\' recursively?', name=name) }}')">
+                            <button onclick="return confirm('{{ _gettext('Silmek istediğinize emin misiniz? \\\'%(name)s\\\, name=name) }}')">
                                 <i class="icon-remove"></i>
                             </button>
                         </form>
@@ -62,7 +62,7 @@
                     {% else %}
                     <form class="icon" method="POST" action="{{ url_for('.delete') }}">
                         <input type="hidden" name="path" value="{{ path }}"></input>
-                        <button onclick="return confirm('{{ _gettext('Are you sure you want to delete \\\'%(name)s\\\'?', name=name) }}')">
+                        <button onclick="return confirm('{{ _gettext('Silmek istediğinize emin misiniz? \\\'%(name)s\\\, name=name) }}')">
                             <i class="icon-remove"></i>
                         </button>
                     </form>
