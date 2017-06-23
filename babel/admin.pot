@@ -19,223 +19,223 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 
 #: ../flask_superadminex/base.py:216
-msgid "Home"
+msgid "Ev"
 msgstr ""
 
 #: ../flask_superadminex/form.py:81
-msgid "Invalid time format"
+msgid "Geçersiz zaman formatı"
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:32
-msgid "Invalid directory name"
+msgid "Geçersiz dizin ismi"
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:40
-msgid "File to upload"
+msgid "Yüklenecek dosya"
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:49
-msgid "File required."
+msgid "Dosya gerekli."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:54
-msgid "Invalid file type."
+msgid "Geçersiz dosya tipi."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:335
-msgid "File uploading is disabled."
+msgid "Dosya yükleme iptal edildi."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:344
 #, python-format
-msgid "File \"%(name)s\" already exists."
+msgid "\"%(name)s\" dosyası zaten var."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:351
 #, python-format
-msgid "Failed to save file: %(error)s"
+msgid "Dosya kaydetme başarısız: %(error)s"
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:370
-msgid "Directory creation is disabled."
+msgid "Dizin oluşturma iptal edildi."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:380
 #, python-format
-msgid "Failed to create directory: %(error)s"
+msgid "Dizin oluşturma hatası: %(error)s"
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:402
-msgid "Deletion is disabled."
+msgid "Silme işlemi iptal edildi."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:407
-msgid "Directory deletion is disabled."
+msgid "Dizin silme işlemi iptal edildi."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:412
 #, python-format
-msgid "Directory \"%s\" was successfully deleted."
+msgid "\"%s\" dizini başarıyla silindi."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:414
 #, python-format
-msgid "Failed to delete directory: %(error)s"
+msgid "Dizin silme hatası: %(error)s"
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:418
 #, python-format
-msgid "File \"%(name)s\" was successfully deleted."
+msgid "\"%(name)s\" dosyası başarıyla silindi."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:420
 #, python-format
-msgid "Failed to delete file: %(name)s"
+msgid "Dosya silme hatası: %(name)s"
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:439
-msgid "Renaming is disabled."
+msgid "Yeniden isimlendirme hatası."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:443
-msgid "Path does not exist."
+msgid "Dosya yolu mevcut değil."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:454
 #, python-format
-msgid "Successfully renamed \"%(src)s\" to \"%(dst)s\""
+msgid "\"%(src)s\" başarıyla \"%(dst)s\" olarak değiştirilmiştir."
 msgstr ""
 
 #: ../flask_superadminex/ext/fileadmin.py:457
 #, python-format
-msgid "Failed to rename: %(error)s"
+msgid "Yeniden isimlendirmede hata: %(error)s"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/filters.py:35
-msgid "equals"
+msgid "eşit"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/filters.py:43
-msgid "not equal"
+msgid "eşit değil"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/filters.py:52
-msgid "contains"
+msgid "içeriyor"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/filters.py:61
-msgid "not contains"
+msgid "içermiyor"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/filters.py:69
-msgid "greater than"
+msgid "büyük"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/filters.py:77
-msgid "smaller than"
+msgid "küçük"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/form.py:37
-msgid "Already exists."
+msgid "Mevcut."
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/view.py:504
 #, python-format
-msgid "Failed to create model. %(error)s"
+msgid "Model oluşturma hatası. %(error)s"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/view.py:519
 #, python-format
-msgid "Failed to update model. %(error)s"
+msgid "Model güncelleme hatası. %(error)s"
 msgstr ""
 
 #: ../flask_superadminex/ext/sqlamodel/view.py:534
 #, python-format
-msgid "Failed to delete model. %(error)s"
+msgid "Model silme hatası. %(error)s"
 msgstr ""
 
 #: ../flask_superadminex/model/base.py:742
-msgid "Model was successfully created."
+msgid "Model başarıyla oluşturuldu."
 msgstr ""
 
 #: ../flask_superadminex/model/filters.py:82
-msgid "Yes"
+msgid "Evet"
 msgstr ""
 
 #: ../flask_superadminex/model/filters.py:83
-msgid "No"
+msgid "Hayır"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/lib.html:105
-msgid "Submit"
+msgid "Onay"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/lib.html:110
-msgid "Cancel"
+msgid "İptal"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/file/list.html:7
-msgid "Root"
+msgid "Kök"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/file/list.html:42
 #, python-format
-msgid "Are you sure you want to delete \\'%(name)s\\' recursively?"
+msgid "\\'%(name)s\\' silmek istediğinize emin misiniz?"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/file/list.html:50
 #, python-format
-msgid "Are you sure you want to delete \\'%(name)s\\'?"
+msgid "\\'%(name)s\\' silmek istediğinize emin misiniz?"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/file/list.html:75
-msgid "Upload File"
+msgid "Dosya yükle"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/file/list.html:78
-msgid "Create Directory"
+msgid "Dizin oluştur"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/file/rename.html:5
 #, python-format
-msgid "Please provide new name for %(name)s"
+msgid "%(name)s için yeni isim oluştur."
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/create.html:11
-msgid "Save and Add"
+msgid "Kaydet ve ekle"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/create.html:16
 #: ../flask_superadminex/templates/admin/model/list.html:12
-msgid "List"
+msgid "Liste"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/create.html:19
 #: ../flask_superadminex/templates/admin/model/list.html:16
-msgid "Create"
+msgid "Oluştur"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/list.html:23
-msgid "Add Filter"
+msgid "Filtre oluştur"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/list.html:44
-msgid "Search"
+msgid "Ara"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/list.html:57
-msgid "Apply"
+msgid "Uygula"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/list.html:59
-msgid "Reset Filters"
+msgid "Filtreyi sıfırla"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/list.html:67
-msgid "Remove Filter"
+msgid "Filtreyi sil"
 msgstr ""
 
 #: ../flask_superadminex/templates/admin/model/list.html:128
-msgid "You sure you want to delete this item?"
+msgid "Bu nesneyi silmek istediğinize emin misiniz?"
 msgstr ""
 
