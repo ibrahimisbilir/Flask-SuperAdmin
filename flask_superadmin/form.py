@@ -1,4 +1,4 @@
-import time
+iz import time
 import datetime
 
 import flask_wtf as wtf
@@ -78,7 +78,7 @@ class TimeField(fields.Field):
                 except ValueError:
                     pass
 
-            raise ValueError(gettext('Invalid time format'))
+            raise ValueError(gettext('Geçersiz zaman formatı'))
 
 
 class ChosenSelectWidget(widgets.Select):
@@ -110,7 +110,7 @@ class FileFieldWidget(object):
     def __call__(self, field, **kwargs):
         from cgi import escape
         input_file = '<input %s>' % widgets.html_params(name=field.name, type='file')
-        return widgets.HTMLString('%s<br />Current: %s<br />%s <label for="%s">Clear file</label>'%(input_file, escape(field._value()), self.widget_checkbox(field._clear), field._clear.id))
+        return widgets.HTMLString('%s<br />Current: %s<br />%s <label for="%s">Dosya temizle</label>'%(input_file, escape(field._value()), self.widget_checkbox(field._clear), field._clear.id))
 
 class FileField(fields.FileField):
     widget = FileFieldWidget()
